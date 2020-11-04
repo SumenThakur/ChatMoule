@@ -162,7 +162,13 @@ class ChatViewController: UITableViewController {
                                        name: UIApplication.willResignActiveNotification,
                                        object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+<<<<<<< HEAD
         prepareContextMenu()
+=======
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardDidShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+    }
+>>>>>>> manually re-integrated branch due to merge conflicts
 
 
     }
@@ -268,6 +274,7 @@ class ChatViewController: UITableViewController {
         if RelayHelper.sharedInstance.isForwarding() {
             askToForwardMessage()
         }
+        prepareContextMenu()
     }
 
     override func viewDidAppear(_ animated: Bool) {
